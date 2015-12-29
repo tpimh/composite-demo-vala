@@ -20,7 +20,7 @@ public class MyWidget : Box {
 	}
 
 	[GtkCallback]
-	private void entry_changed (Button button) {
+	private void entry_changed () {
 		print ("The entry text changed: %s\n", entry.text);
 
 		notify_property ("text");

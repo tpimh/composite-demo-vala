@@ -8,7 +8,7 @@ my-resources.c: my-resources.xml mywidget.ui
 		--target=$@ --sourcedir=$(srcdir) --c-name _my --generate-source
 
 mywidget.c:mywidget.vala
-	valac -C $< --pkg gtk+-3.0
+	valac -C $< --pkg gtk+-3.0 --target-glib=2.38 --gresources my-resources.xml
 
 %.o:%.c
 	gcc -o $@ -c $< -Wall `pkg-config --cflags gtk+-3.0 gmodule-export-2.0`
